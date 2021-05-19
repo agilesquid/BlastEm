@@ -5,4 +5,4 @@ const hornControler = require('./hornControler');
 router.get('/d/:time1', hornControler.horn);
 
 
-moduals.exports = router;
+module.exports = router;
