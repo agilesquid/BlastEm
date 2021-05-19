@@ -5,7 +5,7 @@ var LED = new Gpio(17, 'out');
 //console.log('Horn on for '+args+'ms');
 
 
-moduals.exports.horn = (req, res,next)=>{
+moduals.exports.horn = (req, res)=>{
 
   let time= req.params.time1
 

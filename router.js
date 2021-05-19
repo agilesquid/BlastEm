@@ -1,8 +1,8 @@
-const express = require('express')
-const router = express.router()
-const hornControler = require('./hornControler')
+const express = require('express');
+const router = express.router();
+const hornControler = require('./hornControler');
 
-router.get('/d/:time1', hornControler.horn)
+router.get('/d/:time1', hornControler.horn);
 
 
-moduals.exports = router
+moduals.exports = router;
