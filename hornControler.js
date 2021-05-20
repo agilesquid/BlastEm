@@ -7,7 +7,7 @@
 
 module.exports.horn = (req, res)=>{
         
-        var validate = req.params.time1
+        var validate = parseInt(req.params.time1);
         console.log(isNaN(validate));
         if (isNaN(validate) === true) {
           let time = req.params.time1
