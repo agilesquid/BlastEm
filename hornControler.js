@@ -11,12 +11,12 @@ module.exports.horn = (req, res)=>{
 
     function fire(){
             setImmediate(() => {
-            LED.writeSync(0) //Turn on LED
+            LED.writeSync(0); //Turn on LED
             });
     }
     
     fire();
-    
+    LED.writeSync(0);
     setTimeout(() => {
             console.log('Done');
             LED.writeSync(1); // Turn LED off
