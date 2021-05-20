@@ -12,14 +12,14 @@ module.exports.horn = (req, res)=>{
         function timeValidation(){
         if (isNaN(validate) === false) {
 
-              let time = req.params.time1
+               time = req.params.time1
               return time;
 
-              }else{ let time = 500; 
+              }else{  time = 500; 
                 return time;
         }
         }
-        let time = timeValidation();
+         time = timeValidation();
           var Gpio = require('onoff').Gpio;
           var LED = new Gpio(17, 'out');
     function fire(){
