@@ -9,8 +9,17 @@ module.exports.horn = (req, res)=>{
         
         var validate = parseInt(req.params.time1);
         console.log(isNaN(validate), validate);
+        function timeValidation(){
         if (isNaN(validate) === false) {
-          let time = req.params.time1
+
+              let time = req.params.time1
+              return time;
+
+              }else{ let time = 500; 
+                return time
+        }
+        }
+        let time = timeValidation();
           var Gpio = require('onoff').Gpio;
           var LED = new Gpio(17, 'out');
     function fire(){
@@ -28,9 +37,5 @@ module.exports.horn = (req, res)=>{
       }, time);
       res.status(200).json({status: "success", message: "success", time});
 
-}else{
-
-        console.log('notToday!!!');
 }
 
-}
