@@ -6,7 +6,7 @@
 //LED.writeSync(1);
 
 module.exports.horn = (req, res)=>{
-console.log(req);
+
   let time = req.params.time1
   var Gpio = require('onoff').Gpio;
   var LED = new Gpio(17, 'out');
