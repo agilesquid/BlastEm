@@ -8,7 +8,8 @@
 module.exports.horn = (req, res)=>{
         
         var validate = req.params.time1
-        if (typeof validate === 'number') {
+        console.log(typeof validate);
+        if (typeof validate == 'number') {
           let time = req.params.time1
           var Gpio = require('onoff').Gpio;
           var LED = new Gpio(17, 'out');
