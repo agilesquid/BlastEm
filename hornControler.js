@@ -16,7 +16,7 @@ module.exports.horn = (req, res)=>{
               return time;
 
               }else{ let time = 500; 
-                return time
+                return time;
         }
         }
         let time = timeValidation();
