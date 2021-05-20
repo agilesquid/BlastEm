@@ -7,7 +7,7 @@ var LED = new Gpio(17, 'out');
 
 module.exports.horn = (req, res)=>{
 
-  let time= req.params.time1
+  let time = req.params.time1
 
     function fire(){
             setImmediate(() => {
@@ -22,6 +22,6 @@ module.exports.horn = (req, res)=>{
             LED.writeSync(1); // Turn LED off
             LED.unexport(); // Unexport GPIO to free resources
       }, time||500);
-      res.status(200).json({status: "success", message: "success", time})
+      res.status(200).json({status: "success", message: "success", time});
     
 }
