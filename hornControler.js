@@ -7,11 +7,11 @@ LED.writeSync(1);
 
 module.exports.horn = (req, res)=>{
 
-  let time = req.params.time1;
+  let time = req.params.time1
 
     function fire(){
             setImmediate(() => {
-            LED.writeSync(0); //Turn on LED
+            LED.writeSync(0) //Turn on LED
             });
     }
     
