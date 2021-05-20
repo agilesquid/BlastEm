@@ -9,7 +9,7 @@ module.exports.horn = (req, res)=>{
         
         var validate = req.params.time1
         console.log(typeof validate);
-        if (typeof validate == 'number') {
+        if (NaN(validate) == 1) {
           let time = req.params.time1
           var Gpio = require('onoff').Gpio;
           var LED = new Gpio(17, 'out');
