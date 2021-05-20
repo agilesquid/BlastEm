@@ -5,6 +5,8 @@ const router = require('./router');
 
 app.use('/', router);
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
