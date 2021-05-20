@@ -4,7 +4,8 @@
 
 //console.log('Horn on for '+args+'ms');
 //LED.writeSync(1);
-
+var validate = req.params.time1
+if (typeof validate === 'number') {
 module.exports.horn = (req, res)=>{
 
   let time = req.params.time1
@@ -25,4 +26,8 @@ module.exports.horn = (req, res)=>{
       }, time);
       res.status(200).json({status: "success", message: "success", time});
 
+}
+}else{
+
+        console.log('notToday!!!');
 }
