@@ -15,7 +15,7 @@ module.exports.horn = (req, res)=>{
             LED.writeSync(0) //Turn on LED
             });
     
-    
+        }
     fire();
    // LED.writeSync(0);
     setTimeout(() => {
@@ -24,5 +24,5 @@ module.exports.horn = (req, res)=>{
             LED.unexport(); // Unexport GPIO to free resources
       }, time);
       res.status(200).json({status: "success", message: "success", time});
-}
+
 }
