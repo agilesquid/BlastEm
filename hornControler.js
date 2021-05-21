@@ -20,7 +20,7 @@ module.exports.horn = (req, res)=>{
                                 LED.unexport(); // Unexport GPIO to free resources
                         }, time);
       
-                res.status(200).json({status: "success", message: "success"});
+                res.status(200).json({status: "success", message: "Horn on for " + time + "ms"});
 
         }else{
                 res.status(200).json({status: "", message: ""});
