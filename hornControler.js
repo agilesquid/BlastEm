@@ -6,15 +6,7 @@
 //LED.writeSync(1);
 
 
-const http = require('http');
 
-
-const server = http.createServer(function(req, res) {
-        if(req.url === '/favicon.ico') {
-            console.log('ignore');
-        } else {
-            console.log(req.url);
-     
   
     
 
@@ -50,6 +42,3 @@ module.exports.horn = (req, res)=>{
 
 }
 
-res.end();
-}
-});
