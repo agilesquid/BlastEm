@@ -14,13 +14,13 @@ module.exports.horn = (req, res)=>{
 
                 time = parseInt(req.params.time1);
                
-        }else{time = 500};
+        }else if (isNaN(validate) === true){time = 500};
 
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(17, 'out');
         
         console.log(time);
-        LED.writeSync(0) //Turn on LED
+        LED.writeSync(0); //Turn on LED
   
 
    // LED.writeSync(0);
