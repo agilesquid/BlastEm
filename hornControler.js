@@ -12,7 +12,7 @@ module.exports.horn = (req, res)=>{
         
         if (isNaN(validate) === false) {
 
-                time = validate;
+                time = parseInt(req.params.time1);
                
         }else{time = 500};
 
