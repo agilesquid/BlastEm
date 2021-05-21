@@ -6,7 +6,7 @@
 //LED.writeSync(1);
 
 module.exports.horn = (req, res)=>{
-        
+        if (req.params.time1 != "favicon.ico"){
         var validate = [parseInt(req.params.time1)];
         var time;
          if (isNaN(validate[0]) == false) {
@@ -32,8 +32,11 @@ module.exports.horn = (req, res)=>{
             LED.writeSync(1); // Turn LED off
             LED.unexport(); // Unexport GPIO to free resources
       }, time);
-      res.status(200).json({status: "success", message: "success", time});
+      res.status(200).json({status: "success", message: "success"});
 
 
+}else{
+        res.status(200).json({status: "error", message: "error"});
 }
 
+}
