@@ -19,7 +19,7 @@ module.exports.horn = (req, res)=>{
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(17, 'out');
         
-        console.log(time);
+        console.log(time,' ', validate);
         LED.writeSync(0); //Turn on LED
   
 
