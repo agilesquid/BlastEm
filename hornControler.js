@@ -7,17 +7,14 @@
 
 module.exports.horn = (req, res)=>{
         
-        var validate = parseInt(req.params.time1);
+        var validate = [parseInt(req.params.time1)];
         var time;
-        if (req.params.time1 == "favicon.ico"){
-                        console.log("no!");
-                        res.status(200).json({status: "ignored icon request", message: "stop", time});
-        }else if (isNaN(validate) == false) {
+         if (isNaN(validate[0]) == false) {
                 console.log(req.params.time1);
 
                 time = parseInt(req.params.time1);
                
-        }else if (isNaN(validate) == true){
+        }else if (isNaN(validate[0]) == true){
                 console.log(req.params.time1);
                 time = 500
         };
@@ -25,7 +22,7 @@ module.exports.horn = (req, res)=>{
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(17, 'out');
         
-        console.log(time,' ', validate);
+        console.log(time,' ', validate[0]);
         LED.writeSync(0); //Turn on LED
   
 
