@@ -15,7 +15,7 @@ module.exports.horn = (req, res)=>{
                
         }else{  var time = 500;  
         }
-        
+        validate = undefined;
         delete(validate);
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(17, 'out');
