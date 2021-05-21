@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const hornControler = require('./hornControler');
+const hornControler = require('./hornControlerTest');
 const app = express();
 
 
