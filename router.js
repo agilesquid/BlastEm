@@ -10,12 +10,11 @@ const server = http.createServer(function(req, res) {
             console.log('ignore');
         } else {
             console.log(req.url);
-     
-
-router.get('/:time1', hornControler.horn);
-res.end();
-
-}
+        res.end();            
+    }
 });
+
+server.listen(80);
+router.get('/:time1', hornControler.horn);
 
 module.exports = router;
