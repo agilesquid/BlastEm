@@ -5,16 +5,13 @@
 //console.log('Horn on for '+args+'ms');
 //LED.writeSync(1);
 
-
-
-  
-    
-
 module.exports.horn = (req, res)=>{
         
         var validate = parseInt(req.params.time1);
         var time;
-        if (isNaN(validate) == false) {
+        if (req.params.time1 == "favicon.ico"){
+                        console.log("no!");
+        }else if (isNaN(validate) == false) {
                 console.log(req.params.time1);
 
                 time = parseInt(req.params.time1);
