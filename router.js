@@ -4,7 +4,7 @@ const hornControler = require('./hornControler');
 const app = express();
 
 
-app.use(express.static("Public", options));
+app.use(express.static('Public'));
 
 router.get('/:time1', hornControler.horn);
 
