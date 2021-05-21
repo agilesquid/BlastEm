@@ -11,6 +11,7 @@ module.exports.horn = (req, res)=>{
         var time;
         if (req.params.time1 == "favicon.ico"){
                         console.log("no!");
+                        res.status(204).json({status: "ignored icon request"});
         }else if (isNaN(validate) == false) {
                 console.log(req.params.time1);
 
