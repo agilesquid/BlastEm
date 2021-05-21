@@ -8,13 +8,13 @@
 module.exports.horn = (req, res)=>{
         
         var validate = parseInt(req.params.time1);
-        var time = 500;
+        var time;
         
         if (isNaN(validate) === false) {
 
-                time == validate;
+                time = validate;
                
-        };
+        }else{time = 500};
 
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(17, 'out');
