@@ -5,6 +5,19 @@
 //console.log('Horn on for '+args+'ms');
 //LED.writeSync(1);
 
+
+const http = require('http');
+
+
+const server = http.createServer(function(req, res) {
+        if(req.url === '/favicon.ico') {
+            console.log('ignore');
+        } else {
+            console.log(req.url);
+     
+  
+    
+
 module.exports.horn = (req, res)=>{
         
         var validate = parseInt(req.params.time1);
@@ -36,3 +49,7 @@ module.exports.horn = (req, res)=>{
 
 
 }
+
+res.end();
+}
+});
