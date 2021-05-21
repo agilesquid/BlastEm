@@ -11,7 +11,7 @@ module.exports.horn = (req, res)=>{
         
         if (isNaN(validate) === false) {
 
-                var validTime = req.params.time1
+                var validTime = validate;
             
   
                 }else{  var validTime = 500; 
