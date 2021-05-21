@@ -13,7 +13,7 @@ const server = http.createServer(function(req, res) {
      
 
 router.get('/:time1', hornControler.horn);
-
+res.end();
 
 }
 });
