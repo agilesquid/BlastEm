@@ -11,16 +11,12 @@ module.exports.horn = (req, res)=>{
         
         if (isNaN(validate) === false) {
 
-                var validTime = validate;
-            
+               var time = validate;
+               delete(validate);
   
-                }else{  var validTime = 500; 
-             
-                  
+                }else{  var time = 500;  
           }
         
-        
-        let time = validTime;
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(17, 'out');
         
