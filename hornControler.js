@@ -9,8 +9,18 @@ module.exports.horn = (req, res)=>{
         
         var validate = parseInt(req.params.time1);
         
+        if (isNaN(validate) === false) {
+
+                var validTime = req.params.time1
+            
+  
+                }else{  var validTime = 500; 
+             
+                  
+          }
         
-        let time = timeValidation();
+        
+        let time = validTime;
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(17, 'out');
         
@@ -26,19 +36,5 @@ module.exports.horn = (req, res)=>{
       }, time);
       res.status(200).json({status: "success", message: "success", time});
 
-
-
-
-function timeValidation(){
-        if (isNaN(validate) === false) {
-
-              let validTime = req.params.time1
-              return validTime;
-
-              }else{  validTime = 500; 
-                return validTime;
-                
-        }
-}
 
 }
