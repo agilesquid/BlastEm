@@ -8,27 +8,16 @@
 module.exports.horn = (req, res)=>{
         
         var validate = parseInt(req.params.time1);
-        console.log(isNaN(validate), validate);
-        function timeValidation(){
-        if (isNaN(validate) === false) {
+        
+        
+        let time = timeValidation();
+        var Gpio = require('onoff').Gpio;
+        var LED = new Gpio(17, 'out');
+        
+        console.log(time);
+        LED.writeSync(0) //Turn on LED
+  
 
-               time = req.params.time1
-              return time;
-
-              }else{  time = 500; 
-                return time;
-        }
-        }
-         time = timeValidation();
-          var Gpio = require('onoff').Gpio;
-          var LED = new Gpio(17, 'out');
-    function fire(){
-            setImmediate(() => {
-            LED.writeSync(0) //Turn on LED
-            });
-    
-        }
-    fire();
    // LED.writeSync(0);
     setTimeout(() => {
             console.log('Done', time);
@@ -37,5 +26,19 @@ module.exports.horn = (req, res)=>{
       }, time);
       res.status(200).json({status: "success", message: "success", time});
 
+
+
+
+function timeValidation(){
+        if (isNaN(validate) === false) {
+
+              let validTime = req.params.time1
+              return validTime;
+
+              }else{  validTime = 500; 
+                return validTime;
+                
+        }
 }
 
+}
