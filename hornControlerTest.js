@@ -8,11 +8,12 @@ module.exports.horn = (req, res)=>{
                 var Gpio = require('onoff').Gpio;
                 var LED = new Gpio(17, 'out');
                 var time;
-
-                        if (isNaN(validate) == false) {
+                let LEDStatus = LED.readSync();
+                    console.log("status " , LEDStatus);
+                        if (isNaN(validate) == false && LEDStatus == 1) {
                                 time = parseInt(req.params.time1);
 
-                        }else if (isNaN(validate) == true){
+                        }else if (isNaN(validate) == true && LEDStatus == 1){
                                 time = 500
                         };
                 console.log('Horn on for ', time, 'ms');
