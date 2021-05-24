@@ -7,8 +7,8 @@ module.exports.horn = (req, res)=>{
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(4, 'out'); //change to 17
         //let LEDStatus = LED.readSync();
-        console.log("status " , LEDStatus);
         var Waiting;
+        console.log("Wait? " , Waiting);
         if (Waiting == true){
             return res.status(400).json({status: "busy", message: "please wait for current process to complete"});
         }
@@ -21,6 +21,7 @@ module.exports.horn = (req, res)=>{
                         }else if (isNaN(validate) == true){
                                 time = 500
                         };
+                        console.log("Wait? " , Waiting);
                 console.log('Horn on for ', time, 'ms');
                 LED.writeSync(0); //Turn on LED
 
