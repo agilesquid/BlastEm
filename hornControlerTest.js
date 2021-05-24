@@ -5,7 +5,7 @@ module.exports.horn = (req, res)=>{
                 return res.status(400).json({status: "Error", message: "Error"});
         }
         var Gpio = require('onoff').Gpio;
-        var LED = new Gpio(17, 'out');
+        var LED = new Gpio(4, 'out'); //change to 17
         let LEDStatus = LED.readSync();
         console.log("status " , LEDStatus);
 
