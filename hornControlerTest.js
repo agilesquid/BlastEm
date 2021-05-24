@@ -6,12 +6,13 @@ module.exports.horn = (req, res)=>{
         }
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(4, 'out'); //change to 17
-        let LEDStatus = LED.readSync();
+        //let LEDStatus = LED.readSync();
         console.log("status " , LEDStatus);
-
-        if (LEDStatus == 1){
+        var Waiting;
+        if (Waiting == true){
             return res.status(400).json({status: "busy", message: "please wait for current process to complete"});
         }
+                Waiting = true;
                 var validate = parseInt(req.params.time1);
                 var time;
                         if (isNaN(validate) == false) {
@@ -26,6 +27,7 @@ module.exports.horn = (req, res)=>{
                         setTimeout(() => {
                                 LED.writeSync(1); // Turn LED off
                                 LED.unexport(); // Unexport GPIO to free resources
+                                Waiting = false;
                         }, time);
       
                 res.status(200).json({status: "success", message: "Horn on for " + time + "ms"});
