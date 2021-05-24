@@ -7,7 +7,7 @@ module.exports.horn = (req, res)=>{
         var Gpio = require('onoff').Gpio;
         var LED = new Gpio(4, 'out'); //change to 17
         //let LEDStatus = LED.readSync();
-        var Waiting;
+        let Waiting = false;
         console.log("Wait? " , Waiting);
         if (Waiting == true){
             return res.status(400).json({status: "busy", message: "please wait for current process to complete"});
