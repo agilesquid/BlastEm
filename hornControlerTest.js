@@ -4,16 +4,20 @@ module.exports.horn = (req, res)=>{
         if (req.params.time1 == "favicon.ico"){
                 return res.status(400).json({status: "Error", message: "Error"});
         }
+        var Gpio = require('onoff').Gpio;
+        var LED = new Gpio(17, 'out');
+        let LEDStatus = LED.readSync();
+        
+        if (LEDStatus == 1){
+            return res.status(400).json({status: "busy", message: "please wait for current process to complete"});
+        }
                 var validate = parseInt(req.params.time1);
-                var Gpio = require('onoff').Gpio;
-                var LED = new Gpio(17, 'out');
                 var time;
-                let LEDStatus = LED.readSync();
                     console.log("status " , LEDStatus);
-                        if (isNaN(validate) == false && LEDStatus == 1) {
+                        if (isNaN(validate) == false) {
                                 time = parseInt(req.params.time1);
 
-                        }else if (isNaN(validate) == true && LEDStatus == 1){
+                        }else if (isNaN(validate) == true){
                                 time = 500
                         };
                 console.log('Horn on for ', time, 'ms');
