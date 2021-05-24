@@ -28,8 +28,8 @@ module.exports.horn = (req, res)=>{
                         setTimeout(() => {
                                 LED.writeSync(1); // Turn LED off
                                 LED.unexport(); // Unexport GPIO to free resources
-                                Waiting = false;
-                        }, time);
-      
-                res.status(200).json({status: "success", message: "Horn on for " + time + "ms"});
+                            }, time);
+                            
+                            res.status(200).json({status: "success", message: "Horn on for " + time + "ms"});
+                            Waiting = false;
 }
