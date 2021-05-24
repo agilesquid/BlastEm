@@ -2,7 +2,7 @@
 module.exports.horn = (req, res)=>{
     console.log('this is a test');
         if (req.params.time1 == "favicon.ico"){
-                res.status(400).json({status: "", message: ""});
+                return res.status(400).json({status: "Error", message: "Error"});
         }
                 var validate = parseInt(req.params.time1);
                 var Gpio = require('onoff').Gpio;
