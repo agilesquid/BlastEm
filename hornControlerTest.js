@@ -9,7 +9,7 @@ module.exports.horn = (req, res)=>{
         let LEDStatus = LED.readSync();
         console.log("status " , LEDStatus);
 
-        if (LEDStatus == 0){
+        if (LEDStatus == 1){
             return res.status(400).json({status: "busy", message: "please wait for current process to complete"});
         }
                 var validate = parseInt(req.params.time1);
