@@ -4,7 +4,7 @@ module.exports.horn = (req, res)=>{
             return res.status(400).json({status: "Error", message: "Error"});
     }
         var Gpio = require('onoff').Gpio;
-        var LED = new Gpio(17, 'out'); //change to 17 for live
+        var LED = new Gpio(4, 'out'); //change to 17 for live
         var validate = parseInt(req.params.time1);
         var time;
                 if (isNaN(validate) == false) {
